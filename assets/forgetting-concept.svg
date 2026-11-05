@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="ti de">
+  <title id="ti">Catastrophic forgetting versus memory growth (conceptual)</title>
+  <desc id="de">Conceptual illustration of the design goal: conventional training loses performance on earlier skills as new tasks are learned, while MEGAMIND adds skills to memory so earlier skills stay intact. Not measured results.</desc>
+  <style>
+    text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+    .h{font-size:15px;font-weight:700;fill:#e6edf3}
+    .s{font-size:12px;fill:#8b949e}
+    .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 7s ease-in-out infinite}
+    @keyframes draw{0%{stroke-dashoffset:1}45%{stroke-dashoffset:0}92%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+    .dot{animation:dot 7s ease-in-out infinite;opacity:0}
+    @keyframes dot{0%,8%{opacity:0}45%{opacity:1}92%{opacity:1}100%{opacity:0}}
+    .pulse{animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+  </style>
+
+  <rect x="0.5" y="0.5" width="1199" height="389" rx="16" fill="#0d1117" stroke="#30363d"/>
+
+  <!-- left panel -->
+  <rect x="40" y="30" width="540" height="300" rx="14" fill="#161b22" stroke="#30363d"/>
+  <text x="64" y="62" class="h" style="fill:#ff7b72">Conventional retraining</text>
+  <text x="64" y="82" class="s">new task overwrites old weights</text>
+  <line x1="100" y1="110" x2="100" y2="300" stroke="#30363d" stroke-width="2"/>
+  <line x1="100" y1="300" x2="560" y2="300" stroke="#30363d" stroke-width="2"/>
+  <text x="92" y="134" class="s" text-anchor="end">high</text>
+  <text x="92" y="300" class="s" text-anchor="end">low</text>
+  <text x="56" y="215" class="s" text-anchor="middle" transform="rotate(-90 56 215)" style="font-size:11px">old-skill performance</text>
+  <path class="draw" pathLength="1" d="M100 130 L215 168 L330 222 L445 262 L560 284" fill="none" stroke="#ff7b72" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ff7b72">
+    <circle class="dot" cx="100" cy="130" r="5"/><circle class="dot" cx="215" cy="168" r="5"/><circle class="dot" cx="330" cy="222" r="5"/><circle class="dot" cx="445" cy="262" r="5"/><circle class="dot" cx="560" cy="284" r="5"/>
+  </g>
+  <text x="560" y="262" class="s pulse" text-anchor="end" style="fill:#ff7b72;font-weight:700">catastrophic forgetting</text>
+  <g class="s" text-anchor="middle">
+    <text x="100" y="320">Task 1</text><text x="215" y="320">Task 2</text><text x="330" y="320">Task 3</text><text x="445" y="320">Task 4</text><text x="560" y="320">Task 5</text>
+  </g>
+
+  <!-- right panel -->
+  <rect x="620" y="30" width="540" height="300" rx="14" fill="#161b22" stroke="#30363d"/>
+  <text x="644" y="62" class="h" style="fill:#3fb950">MEGAMIND</text>
+  <text x="644" y="82" class="s">skills are added to memory, not overwritten</text>
+  <line x1="680" y1="110" x2="680" y2="300" stroke="#30363d" stroke-width="2"/>
+  <line x1="680" y1="300" x2="1140" y2="300" stroke="#30363d" stroke-width="2"/>
+  <text x="672" y="134" class="s" text-anchor="end">high</text>
+  <text x="672" y="300" class="s" text-anchor="end">low</text>
+  <text x="636" y="215" class="s" text-anchor="middle" transform="rotate(-90 636 215)" style="font-size:11px">old-skill performance</text>
+  <path class="draw" pathLength="1" d="M680 130 L795 128 L910 133 L1025 127 L1140 131" fill="none" stroke="#3fb950" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#3fb950">
+    <circle class="dot" cx="680" cy="130" r="5"/><circle class="dot" cx="795" cy="128" r="5"/><circle class="dot" cx="910" cy="133" r="5"/><circle class="dot" cx="1025" cy="127" r="5"/><circle class="dot" cx="1140" cy="131" r="5"/>
+  </g>
+  <text x="1140" y="112" class="s pulse" text-anchor="end" style="fill:#3fb950;font-weight:700">earlier skills stay intact</text>
+  <g class="s" text-anchor="middle">
+    <text x="680" y="320">Task 1</text><text x="795" y="320">Task 2</text><text x="910" y="320">Task 3</text><text x="1025" y="320">Task 4</text><text x="1140" y="320">Task 5</text>
+  </g>
+
+  <text x="600" y="362" class="s" text-anchor="middle">Conceptual illustration of the design goal · not experimental results</text>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="ti de">
+  <title id="ti">Growth-Check Gate</title>
+  <desc id="de">Animated diagram: observed actions stream from short-term memory into the growth-check gate. Cohesive, repeated actions are promoted to long-term memory as a new Small Tree; noisy one-off actions are discarded.</desc>
+  <defs>
+    <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3fb950"/></marker>
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d29922" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#d29922" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#d29922" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="gateClip"><rect x="470" y="84" width="250" height="270" rx="16"/></clipPath>
+  </defs>
+  <style>
+    text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+    .h{font-size:15px;font-weight:700;fill:#e6edf3}
+    .s{font-size:12px;fill:#8b949e}
+    .flow{stroke-dasharray:6 6;animation:flow 1s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-12}}
+    .pulse{animation:pulse 2.4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+    .good{animation:good 6s linear infinite;opacity:0}
+    @keyframes good{0%{transform:translateX(0);opacity:0}6%{opacity:1}88%{opacity:1}100%{transform:translateX(720px);opacity:0}}
+    .bad{animation:bad 6s linear infinite;opacity:0}
+    @keyframes bad{0%{transform:translate(0,0);opacity:0;stroke:#8b949e}6%{opacity:1}55%{transform:translate(590px,0);stroke:#8b949e}72%{transform:translate(590px,0);stroke:#ff7b72}100%{transform:translate(590px,140px);opacity:0;stroke:#ff7b72}}
+    .pop{animation:pop 6s ease-out infinite;opacity:0;transform-box:fill-box;transform-origin:center}
+    @keyframes pop{0%{transform:scale(0);opacity:0}8%{transform:scale(1.2);opacity:1}14%{transform:scale(1)}86%{opacity:1}100%{opacity:0}}
+    .blink{animation:blink 1.2s steps(2,start) infinite}
+    @keyframes blink{to{visibility:hidden}}
+  </style>
+
+  <rect x="0.5" y="0.5" width="1199" height="479" rx="16" fill="#0d1117" stroke="#30363d"/>
+  <text x="40" y="38" class="h" font-size="18">GROWTH-CHECK GATE</text>
+  <text x="40" y="58" class="s">Evidence-driven growth: only cohesive, repeated action clusters are promoted to long-term memory</text>
+
+  <!-- STM -->
+  <rect x="40" y="84" width="300" height="270" rx="16" fill="#0d1b2e" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="60" y="112" class="h" style="fill:#58a6ff">SHORT-TERM MEMORY</text>
+  <text x="60" y="130" class="s">observed actions (unconfirmed)</text>
+
+  <!-- gate -->
+  <rect x="470" y="84" width="250" height="270" rx="16" fill="#1b1708" stroke="#d29922" stroke-width="2"/>
+  <g clip-path="url(#gateClip)">
+    <rect x="400" y="84" width="80" height="270" fill="url(#scan)">
+      <animate attributeName="x" values="400;720;400" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <text x="595" y="112" class="h" text-anchor="middle" style="fill:#d29922">GROWTH-CHECK GATE</text>
+  <text x="595" y="130" class="s" text-anchor="middle">cohesive + repeated cluster?</text>
+  <text x="490" y="296" class="s" style="fill:#3fb950">✓ repeated ≥ N times</text>
+  <text x="490" y="314" class="s" style="fill:#3fb950">✓ cohesive context</text>
+  <text x="490" y="332" class="s" style="fill:#3fb950">✓ task-relevant UI</text>
+
+  <!-- LTM -->
+  <rect x="780" y="84" width="380" height="270" rx="16" fill="#0c1a12" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="800" y="112" class="h" style="fill:#3fb950">LONG-TERM MEMORY</text>
+  <text x="800" y="130" class="s">new Small Tree grown</text>
+  <path d="M722 190 H778" stroke="#3fb950" stroke-width="2.5" fill="none" class="flow" marker-end="url(#ag)"/>
+  <text x="749" y="178" class="s" text-anchor="middle" style="fill:#3fb950;font-weight:700;font-size:10px">PROMOTE</text>
+
+  <!-- growing tree -->
+  <g stroke="#3fb950" stroke-width="2" fill="none">
+    <path class="pop" d="M970 190 L900 262" style="animation-delay:.6s"/>
+    <path class="pop" d="M970 190 L970 262" style="animation-delay:1.0s"/>
+    <path class="pop" d="M970 190 L1040 262" style="animation-delay:1.4s"/>
+  </g>
+  <g class="pop">
+    <circle cx="970" cy="180" r="26" fill="#12301c" stroke="#3fb950" stroke-width="2"/>
+    <text x="970" y="185" class="s" text-anchor="middle" style="fill:#e6edf3;font-weight:700">Login</text>
+  </g>
+  <g class="pop" style="animation-delay:.6s"><circle cx="900" cy="272" r="20" fill="#0f2418" stroke="#39d0d0" stroke-width="1.5"/><text x="900" y="276" class="s" text-anchor="middle" style="fill:#e6edf3;font-size:11px">user</text></g>
+  <g class="pop" style="animation-delay:1.0s"><circle cx="970" cy="272" r="20" fill="#0f2418" stroke="#39d0d0" stroke-width="1.5"/><text x="970" y="276" class="s" text-anchor="middle" style="fill:#e6edf3;font-size:11px">pass</text></g>
+  <g class="pop" style="animation-delay:1.4s"><circle cx="1040" cy="272" r="20" fill="#0f2418" stroke="#39d0d0" stroke-width="1.5"/><text x="1040" y="276" class="s" text-anchor="middle" style="fill:#e6edf3;font-size:11px">ok</text></g>
+  <g class="pop" style="animation-delay:1.8s">
+    <rect x="1010" y="152" width="44" height="20" rx="10" fill="#3fb950"/>
+    <text x="1032" y="166" class="s" text-anchor="middle" style="fill:#0d1117;font-weight:700;font-size:10px">NEW</text>
+  </g>
+  <text x="970" y="332" class="s" text-anchor="middle">cohesive cluster → permanent Small Tree</text>
+
+  <!-- discard bin -->
+  <rect x="560" y="384" width="200" height="66" rx="14" fill="#241012" stroke="#ff7b72" stroke-width="1.5"/>
+  <text x="660" y="415" class="h" text-anchor="middle" style="fill:#ff7b72;font-size:13px">DISCARDED · NOISE</text>
+  <text x="660" y="434" class="s" text-anchor="middle">one-off · accidental</text>
+
+  <!-- tokens: promoted (green) -->
+  <g class="good" style="animation-delay:-4s"><rect x="42" y="178" width="56" height="24" rx="8" fill="#12261a" stroke="#3fb950"/><text x="70" y="194" class="s" text-anchor="middle" style="fill:#3fb950">login</text></g>
+  <g class="good" style="animation-delay:-2s"><rect x="42" y="178" width="56" height="24" rx="8" fill="#12261a" stroke="#3fb950"/><text x="70" y="194" class="s" text-anchor="middle" style="fill:#3fb950">click</text></g>
+  <g class="good"><rect x="42" y="178" width="56" height="24" rx="8" fill="#12261a" stroke="#3fb950"/><text x="70" y="194" class="s" text-anchor="middle" style="fill:#3fb950">type</text></g>
+  <!-- tokens: rejected (gray) -->
+  <g class="bad" style="animation-delay:-5s"><rect x="42" y="248" width="64" height="24" rx="8" fill="#1c2128" stroke="#8b949e"/><text x="74" y="264" class="s" text-anchor="middle">misclick</text></g>
+  <g class="bad" style="animation-delay:-3s"><rect x="42" y="248" width="64" height="24" rx="8" fill="#1c2128" stroke="#8b949e"/><text x="74" y="264" class="s" text-anchor="middle">idle</text></g>
+  <g class="bad" style="animation-delay:-1s"><rect x="42" y="248" width="64" height="24" rx="8" fill="#1c2128" stroke="#8b949e"/><text x="74" y="264" class="s" text-anchor="middle">hover</text></g>
+
+  <!-- legend -->
+  <rect x="40" y="404" width="30" height="14" rx="5" fill="#12261a" stroke="#3fb950"/>
+  <text x="80" y="416" class="s">cohesive, repeated action → promoted to LTM</text>
+  <rect x="40" y="430" width="30" height="14" rx="5" fill="#1c2128" stroke="#8b949e"/>
+  <text x="80" y="442" class="s">noise, one-off, accidental → discarded</text>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="ti de">
+  <title id="ti">Tree-Graph hybrid memory</title>
+  <desc id="de">Animated diagram of the hierarchical skill ontology: the Parent Tree branches into short-term and long-term memory; Big Trees (compound tasks) reference shared Small Trees (atomic skills) through graph edges; reference counts decide which skills are pruned.</desc>
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#58a6ff"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f0883e"/></marker>
+    <marker id="ap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#bc8cff"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3fb950"/></marker>
+  </defs>
+  <style>
+    text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+    .h{font-size:15px;font-weight:700;fill:#e6edf3}
+    .s{font-size:12px;fill:#8b949e}
+    .t{font-size:13px;fill:#e6edf3}
+    .flow{stroke-dasharray:6 6;animation:flow 1s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-12}}
+    .pulse{animation:pulse 2.4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+  </style>
+
+  <rect x="0.5" y="0.5" width="1199" height="659" rx="16" fill="#0d1117" stroke="#30363d"/>
+  <text x="40" y="38" class="h" font-size="18">TREE-GRAPH HYBRID MEMORY</text>
+  <text x="40" y="58" class="s">Trees give hierarchy · graph edges give sequence and reuse</text>
+
+  <!-- legend -->
+  <line x1="880" y1="34" x2="916" y2="34" stroke="#8b949e" stroke-width="2"/>
+  <text x="926" y="38" class="s">Tree edge (hierarchy)</text>
+  <line x1="880" y1="54" x2="916" y2="54" stroke="#f0883e" stroke-width="2" class="flow"/>
+  <text x="926" y="58" class="s">Graph edge (uses / sequence)</text>
+  <line x1="880" y1="74" x2="916" y2="74" stroke="#ff7b72" stroke-width="2" stroke-dasharray="3 5"/>
+  <text x="926" y="78" class="s">Decayed edge</text>
+
+  <!-- root -->
+  <rect x="500" y="44" width="200" height="44" rx="10" fill="#1d1535" stroke="#bc8cff" stroke-width="1.5"/>
+  <text x="600" y="71" class="h" text-anchor="middle" style="fill:#bc8cff">PARENT TREE (ROOT)</text>
+
+  <!-- tree edges -->
+  <path d="M600 88 C600 110 340 108 340 128" stroke="#8b949e" stroke-width="2" fill="none"/>
+  <path d="M600 88 V128" stroke="#8b949e" stroke-width="2" fill="none"/>
+  <path d="M600 170 C600 205 335 195 335 230" stroke="#8b949e" stroke-width="2" fill="none"/>
+  <path d="M600 170 C600 205 865 195 865 230" stroke="#8b949e" stroke-width="2" fill="none"/>
+
+  <rect x="250" y="128" width="180" height="42" rx="10" fill="#0d1b2e" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="340" y="154" class="h" text-anchor="middle" style="fill:#58a6ff;font-size:13px">SHORT-TERM MEMORY</text>
+  <rect x="510" y="128" width="180" height="42" rx="10" fill="#0c1a12" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="600" y="154" class="h" text-anchor="middle" style="fill:#3fb950;font-size:13px">LONG-TERM MEMORY</text>
+  <text x="120" y="154" class="s" text-anchor="middle">temporary</text>
+  <text x="840" y="154" class="s">permanent</text>
+
+  <!-- big trees -->
+  <text x="60" y="214" class="s" style="font-weight:700;letter-spacing:1px">BIG TREES · compound tasks</text>
+  <rect x="235" y="230" width="200" height="64" rx="12" fill="#2a1a0c" stroke="#f0883e" stroke-width="2"/>
+  <text x="335" y="256" class="h" text-anchor="middle" style="fill:#f0883e">Big Tree 1</text>
+  <text x="335" y="276" class="s" text-anchor="middle">FB Post · Context: Web</text>
+  <rect x="765" y="230" width="200" height="64" rx="12" fill="#1d1535" stroke="#bc8cff" stroke-width="2"/>
+  <text x="865" y="256" class="h" text-anchor="middle" style="fill:#bc8cff">Big Tree 2</text>
+  <text x="865" y="276" class="s" text-anchor="middle">Insta Post · Context: App</text>
+
+  <!-- graph edges Big1 -->
+  <path d="M315 294 C315 365 200 360 200 428" stroke="#f0883e" stroke-width="2" fill="none" class="flow" marker-end="url(#ao)"/>
+  <path d="M335 294 C335 365 470 360 470 428" stroke="#f0883e" stroke-width="2" fill="none" class="flow" marker-end="url(#ao)"/>
+  <path d="M355 294 C355 365 740 340 740 428" stroke="#f0883e" stroke-width="2" fill="none" class="flow" marker-end="url(#ao)"/>
+  <!-- graph edges Big2 -->
+  <path d="M845 294 C845 365 470 335 470 428" stroke="#bc8cff" stroke-width="2" fill="none" class="flow" marker-end="url(#ap)" style="animation-delay:-.4s"/>
+  <path d="M865 294 C865 365 740 360 740 428" stroke="#bc8cff" stroke-width="2" fill="none" class="flow" marker-end="url(#ap)" style="animation-delay:-.4s"/>
+  <!-- decayed edge -->
+  <path d="M895 294 C895 360 1010 350 1010 428" stroke="#ff7b72" stroke-width="1.5" fill="none" stroke-dasharray="3 5" class="pulse"/>
+
+  <!-- small trees -->
+  <text x="60" y="412" class="s" style="font-weight:700;letter-spacing:1px">SMALL TREES · atomic skills (shared)</text>
+
+  <rect x="115" y="430" width="170" height="64" rx="12" fill="#0f2418" stroke="#39d0d0" stroke-width="2"/>
+  <text x="200" y="448" class="s" text-anchor="middle">Small Tree A</text>
+  <text x="200" y="468" class="h" text-anchor="middle">Click</text>
+  <text x="200" y="486" class="s" text-anchor="middle" style="fill:#39d0d0;font-weight:700">ref count: 1</text>
+
+  <rect x="385" y="430" width="170" height="64" rx="12" fill="#0f2418" stroke="#3fb950" stroke-width="2"/>
+  <text x="470" y="448" class="s" text-anchor="middle">Small Tree B</text>
+  <text x="470" y="468" class="h" text-anchor="middle">Login</text>
+  <text x="470" y="486" class="s" text-anchor="middle" style="fill:#3fb950;font-weight:700">ref count: 2</text>
+
+  <rect x="655" y="430" width="170" height="64" rx="12" fill="#0f2418" stroke="#3fb950" stroke-width="2"/>
+  <text x="740" y="448" class="s" text-anchor="middle">Small Tree C</text>
+  <text x="740" y="468" class="h" text-anchor="middle">Type Text</text>
+  <text x="740" y="486" class="s" text-anchor="middle" style="fill:#3fb950;font-weight:700">ref count: 2</text>
+
+  <g class="pulse">
+    <rect x="925" y="430" width="170" height="64" rx="12" fill="#241012" stroke="#ff7b72" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1010" y="448" class="s" text-anchor="middle">Small Tree D</text>
+    <text x="1010" y="468" class="h" text-anchor="middle" style="fill:#ff7b72">Scroll</text>
+    <text x="1010" y="486" class="s" text-anchor="middle" style="fill:#ff7b72;font-weight:700">ref count: 0</text>
+  </g>
+  <text x="1010" y="514" class="s" text-anchor="middle" style="fill:#ff7b72">orphaned → pruned by garbage collection</text>
+
+  <!-- execution sequence strip -->
+  <rect x="60" y="545" width="1080" height="72" rx="14" fill="#161b22" stroke="#30363d"/>
+  <text x="84" y="575" class="h">Execution order</text>
+  <text x="84" y="593" class="s">Big Tree 1 · FB Post (Web)</text>
+  <rect x="420" y="563" width="120" height="34" rx="17" fill="#0f2418" stroke="#3fb950"/>
+  <text x="480" y="585" class="t" text-anchor="middle">Login</text>
+  <path d="M540 580 H598" stroke="#f0883e" stroke-width="2" fill="none" class="flow" marker-end="url(#ao)"/>
+  <rect x="600" y="563" width="120" height="34" rx="17" fill="#0f2418" stroke="#39d0d0"/>
+  <text x="660" y="585" class="t" text-anchor="middle">Click</text>
+  <path d="M720 580 H778" stroke="#f0883e" stroke-width="2" fill="none" class="flow" marker-end="url(#ao)"/>
+  <rect x="780" y="563" width="120" height="34" rx="17" fill="#0f2418" stroke="#3fb950"/>
+  <text x="840" y="585" class="t" text-anchor="middle">Type Text</text>
+  <text x="920" y="585" class="s">graph edges encode the order</text>
+
+  <text x="600" y="642" class="s" text-anchor="middle">ref count = number of Big Trees that reference a Small Tree · count 0 ⇒ orphan ⇒ deleted</text>
+</svg>

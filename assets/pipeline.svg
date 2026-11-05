@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="ti de">
+  <title id="ti">End-to-end pipeline</title>
+  <desc id="de">Animated eight-step pipeline: observe, perceive, buffer, verify, consolidate, reuse, prune, execute, looping back to observe for continual learning.</desc>
+  <defs>
+    <marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8b949e"/></marker>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+    .h{font-size:15px;font-weight:700;fill:#e6edf3}
+    .s{font-size:12.5px;fill:#8b949e}
+    .ti{font-size:16px;font-weight:700;fill:#e6edf3}
+    .n{font-size:15px;font-weight:800;fill:#0d1117}
+    .flow{stroke-dasharray:6 6;animation:flow 1s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-12}}
+  </style>
+
+  <rect x="0.5" y="0.5" width="1199" height="479" rx="16" fill="#0d1117" stroke="#30363d"/>
+  <text x="50" y="40" class="h" font-size="18">END-TO-END PIPELINE</text>
+  <text x="50" y="60" class="s">From a screen recording to a reusable, pruned skill</text>
+
+  <!-- connectors row 1 -->
+  <path d="M280 145 H338" stroke="#8b949e" stroke-width="2" fill="none" class="flow" marker-end="url(#aw)"/>
+  <path d="M570 145 H628" stroke="#8b949e" stroke-width="2" fill="none" class="flow" marker-end="url(#aw)"/>
+  <path d="M860 145 H918" stroke="#8b949e" stroke-width="2" fill="none" class="flow" marker-end="url(#aw)"/>
+  <!-- turn -->
+  <path d="M1035 210 V298" stroke="#8b949e" stroke-width="2" fill="none" class="flow" marker-end="url(#aw)"/>
+  <!-- row 2 (right to left) -->
+  <path d="M920 365 H862" stroke="#8b949e" stroke-width="2" fill="none" class="flow" marker-end="url(#aw)"/>
+  <path d="M630 365 H572" stroke="#8b949e" stroke-width="2" fill="none" class="flow" marker-end="url(#aw)"/>
+  <path d="M340 365 H282" stroke="#8b949e" stroke-width="2" fill="none" class="flow" marker-end="url(#aw)"/>
+  <!-- loop back -->
+  <path d="M50 365 H26 V145 H48" stroke="#58a6ff" stroke-width="2" fill="none" stroke-dasharray="4 5" class="flow" marker-end="url(#aw)"/>
+  <text x="13" y="255" class="s" text-anchor="middle" transform="rotate(-90 13 255)" style="font-size:11px;fill:#58a6ff">continual learning loop</text>
+
+  <!-- cards row 1 -->
+  <g>
+    <rect x="50" y="80" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="50" y="80" width="230" height="130" rx="14" fill="#58a6ff" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="0s" repeatCount="indefinite"/></rect>
+    <rect x="50" y="80" width="230" height="5" rx="2.5" fill="#58a6ff"/>
+    <circle cx="84" cy="118" r="18" fill="#58a6ff"/><text x="84" y="124" class="n" text-anchor="middle">1</text>
+    <text x="112" y="124" class="ti">Observe</text>
+    <text x="70" y="158" class="s">Watch a screen recording</text>
+    <text x="70" y="176" class="s">of a user doing a task</text>
+  </g>
+  <g>
+    <rect x="340" y="80" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="340" y="80" width="230" height="130" rx="14" fill="#58a6ff" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="1.3s" repeatCount="indefinite"/></rect>
+    <rect x="340" y="80" width="230" height="5" rx="2.5" fill="#58a6ff"/>
+    <circle cx="374" cy="118" r="18" fill="#58a6ff"/><text x="374" y="124" class="n" text-anchor="middle">2</text>
+    <text x="402" y="124" class="ti">Perceive</text>
+    <text x="360" y="158" class="s">Encoder extracts buttons,</text>
+    <text x="360" y="176" class="s">icons and clickable areas</text>
+  </g>
+  <g>
+    <rect x="630" y="80" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="630" y="80" width="230" height="130" rx="14" fill="#bc8cff" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="2.8s" repeatCount="indefinite"/></rect>
+    <rect x="630" y="80" width="230" height="5" rx="2.5" fill="#bc8cff"/>
+    <circle cx="664" cy="118" r="18" fill="#bc8cff"/><text x="664" y="124" class="n" text-anchor="middle">3</text>
+    <text x="692" y="124" class="ti">Buffer</text>
+    <text x="650" y="158" class="s">Write the action sequence</text>
+    <text x="650" y="176" class="s">to Short-Term Memory</text>
+  </g>
+  <g>
+    <rect x="920" y="80" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="920" y="80" width="230" height="130" rx="14" fill="#d29922" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="4.3s" repeatCount="indefinite"/></rect>
+    <rect x="920" y="80" width="230" height="5" rx="2.5" fill="#d29922"/>
+    <circle cx="954" cy="118" r="18" fill="#d29922"/><text x="954" y="124" class="n" text-anchor="middle">4</text>
+    <text x="982" y="124" class="ti">Verify</text>
+    <text x="940" y="158" class="s">Growth-Check Gate looks for</text>
+    <text x="940" y="176" class="s">cohesive, repeated clusters</text>
+  </g>
+
+  <!-- cards row 2 -->
+  <g>
+    <rect x="920" y="300" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="920" y="300" width="230" height="130" rx="14" fill="#3fb950" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="5.5s" repeatCount="indefinite"/></rect>
+    <rect x="920" y="300" width="230" height="5" rx="2.5" fill="#3fb950"/>
+    <circle cx="954" cy="338" r="18" fill="#3fb950"/><text x="954" y="344" class="n" text-anchor="middle">5</text>
+    <text x="982" y="344" class="ti">Consolidate</text>
+    <text x="940" y="378" class="s">Promote clusters to LTM as</text>
+    <text x="940" y="396" class="s">Small Trees; link via graph</text>
+  </g>
+  <g>
+    <rect x="630" y="300" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="630" y="300" width="230" height="130" rx="14" fill="#39d0d0" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="7s" repeatCount="indefinite"/></rect>
+    <rect x="630" y="300" width="230" height="5" rx="2.5" fill="#39d0d0"/>
+    <circle cx="664" cy="338" r="18" fill="#39d0d0"/><text x="664" y="344" class="n" text-anchor="middle">6</text>
+    <text x="692" y="344" class="ti">Reuse</text>
+    <text x="650" y="378" class="s">Reference existing Small</text>
+    <text x="650" y="396" class="s">Trees instead of relearning</text>
+  </g>
+  <g>
+    <rect x="340" y="300" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="340" y="300" width="230" height="130" rx="14" fill="#ff7b72" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="8.5s" repeatCount="indefinite"/></rect>
+    <rect x="340" y="300" width="230" height="5" rx="2.5" fill="#ff7b72"/>
+    <circle cx="374" cy="338" r="18" fill="#ff7b72"/><text x="374" y="344" class="n" text-anchor="middle">7</text>
+    <text x="402" y="344" class="ti">Prune</text>
+    <text x="360" y="378" class="s">Ref counting + decay remove</text>
+    <text x="360" y="396" class="s">orphans and weak edges</text>
+  </g>
+  <g>
+    <rect x="50" y="300" width="230" height="130" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="50" y="300" width="230" height="130" rx="14" fill="#f0883e" opacity="0"><animate attributeName="opacity" values="0;0.2;0;0" keyTimes="0;0.05;0.12;1" dur="10s" begin="9.5s" repeatCount="indefinite"/></rect>
+    <rect x="50" y="300" width="230" height="5" rx="2.5" fill="#f0883e"/>
+    <circle cx="84" cy="338" r="18" fill="#f0883e"/><text x="84" y="344" class="n" text-anchor="middle">8</text>
+    <text x="112" y="344" class="ti">Execute</text>
+    <text x="70" y="378" class="s">Replay the learned skill</text>
+    <text x="70" y="396" class="s">across applications</text>
+  </g>
+
+  <!-- travelling token -->
+  <circle r="7" fill="#58a6ff" filter="url(#glow)">
+    <animateMotion dur="10s" repeatCount="indefinite" path="M165 145 H1035 V365 H165"/>
+  </circle>
+
+  <text x="600" y="462" class="s" text-anchor="middle">Steps 1–5 grow the memory · step 6 reuses it · step 7 keeps it lightweight · step 8 acts on it</text>
+</svg>
