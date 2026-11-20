@@ -1,0 +1,9 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Archives & datasets
+*.zip
+megaMind_full_485/
+mithun*
+megaMind_kaggle_train.ipynb

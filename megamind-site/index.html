@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEGAMIND — An agent that learns UI by watching, and remembers.</title>
+  <meta name="description"
+    content="A bio-inspired, memory-augmented agent that learns UI tasks from screen recordings and keeps what it has learned without catastrophic forgetting." />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="MEGAMIND — Bio-Inspired UI Continual Learning Agent" />
+  <meta property="og:description"
+    content="Learns UI tasks from screen recordings and accumulates skills in a Hierarchical Skill Ontology without catastrophic forgetting." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/favicon.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0b0e13" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Atkinson+Hyperlegible+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MEGAMIND",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "description": "A bio-inspired, memory-augmented agent that learns UI tasks from screen recordings and keeps what it has learned.",
+    "url": "https://github.com/shuvosinghpartho/megaMind",
+    "author": {
+      "@type": "Person",
+      "name": "Shuvo Singh Partho"
+    }
+  }
+  </script>
+
+  <!-- No-flash theme: read localStorage before first paint -->
+  <script>
+    ; (function () {
+      try {
+        var t = localStorage.getItem('megamind-theme')
+        if (!t || t === 'system') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        }
+        document.documentElement.setAttribute('data-theme', t)
+      } catch (e) { }
+    })()
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

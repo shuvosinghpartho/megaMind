@@ -1,0 +1,379 @@
+/* Hallmark · theme: Console · genre: modern-minimal · v2.0.0 */
+@import './tokens.css';
+@import 'tailwindcss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: clip;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--color-rule-2) var(--color-paper);
+  scroll-padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.55;
+  caret-color: var(--color-accent);
+  transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+}
+
+/* Headings: Host Grotesk 500, calm, sentence case, never artificial tracking */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight, 500);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.05;
+  color: var(--color-ink);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+h1 {
+  font-size: var(--text-display);
+}
+
+h2 {
+  font-size: var(--text-section);
+}
+
+h3 {
+  font-size: var(--text-title);
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: var(--text-lead);
+  line-height: 1.45;
+  color: var(--color-ink-2);
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+p:not([class]) {
+  max-width: 68ch;
+  color: var(--color-muted);
+}
+
+/* Code & Measured Figures: Atkinson Hyperlegible Mono with tabular numbers and slashed zero */
+code, pre, .font-mono, .measured {
+  font-family: var(--font-outlier);
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.measured {
+  font-size: var(--text-sm);
+  color: var(--color-cool);
+}
+
+.reading {
+  font-family: var(--font-outlier);
+  font-size: var(--text-display-s);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Selection */
+::selection {
+  background: color-mix(in oklab, var(--color-accent) 25%, transparent);
+}
+
+/* Hallmark Section Canvas & Spacing Discipline */
+.section-container,
+.section {
+  width: 100%;
+  max-width: var(--container, 1360px);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 3.5vw, 3rem);
+  padding-block: clamp(4.5rem, 9vh, 8rem);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
+  max-width: 60ch;
+}
+
+.section-header.text-center {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 72ch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-header.text-center .section-desc {
+  margin-inline: auto;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.06;
+  color: var(--color-ink);
+  margin-bottom: var(--space-sm);
+  text-wrap: balance;
+}
+
+.section-desc {
+  font-family: var(--font-display);
+  font-size: var(--text-lead);
+  line-height: 1.5;
+  color: var(--color-muted);
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+/* Hallmark Section Badges */
+.console-badge,
+.bento-badge,
+.dev-badge,
+.benchmark-badge,
+.roadmap-badge,
+.faq-badge,
+.download-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--color-cool-soft);
+  color: var(--color-cool);
+  border: var(--rule-hair) solid color-mix(in oklch, var(--color-cool) 35%, transparent);
+  margin-bottom: var(--space-sm);
+  transition: transform var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+}
+
+.console-badge:hover,
+.bento-badge:hover,
+.dev-badge:hover,
+.benchmark-badge:hover,
+.roadmap-badge:hover,
+.faq-badge:hover,
+.download-badge:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-cool);
+  box-shadow: 0 0 14px -3px color-mix(in oklch, var(--color-cool) 40%, transparent);
+}
+
+.badge-dot,
+.beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-cool);
+  box-shadow: 0 0 8px var(--color-cool);
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.badge-dot::after,
+.beacon::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-cool);
+  animation: badge-sonar 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes badge-sonar {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+  box-sizing: border-box;
+}
+
+/* Hallmark Hairline Panels Surface:
+ * Panels that sit together are cut from one graphite surface divided by 1px rules
+ */
+.panels {
+  display: grid;
+  gap: var(--rule-hair);
+  background: var(--color-rule);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.panels > * {
+  background: var(--color-paper-2);
+}
+
+/* Console Control Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  border: var(--rule-hair) solid var(--color-rule-2);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+}
+
+.btn:hover {
+  background: var(--color-paper-3);
+  border-color: var(--color-accent);
+}
+
+/* Primary Action: Amber Fill with Dark Ink */
+.btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+.btn--primary:hover {
+  background: color-mix(in oklch, var(--color-accent) 90%, white);
+  border-color: color-mix(in oklch, var(--color-accent) 90%, white);
+}
+
+/* Secondary Action: Hairline Outline */
+.btn--secondary {
+  background: transparent;
+  border-color: var(--color-rule-2);
+  color: var(--color-ink);
+}
+
+.btn--secondary:hover {
+  background: var(--color-paper-2);
+  border-color: var(--color-cool);
+}
+
+/* Console Chips & Badges */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  border: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper-3);
+  color: var(--color-muted);
+}
+
+.chip--amber {
+  border-color: color-mix(in oklch, var(--color-accent) 40%, transparent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.chip--cool {
+  border-color: color-mix(in oklch, var(--color-cool) 40%, transparent);
+  background: var(--color-cool-soft);
+  color: var(--color-cool);
+}
+
+.chip--ok {
+  border-color: color-mix(in oklch, var(--color-ok) 40%, transparent);
+  background: var(--color-ok-soft);
+  color: var(--color-ok);
+}
+
+.chip--bad {
+  border-color: color-mix(in oklch, var(--color-bad) 40%, transparent);
+  background: var(--color-bad-soft);
+  color: var(--color-bad);
+}
+
+/* Diffs & Audit Rows */
+.row--minus {
+  background: var(--color-bad-soft);
+  color: var(--color-bad);
+}
+
+.row--plus {
+  background: var(--color-ok-soft);
+  color: var(--color-ok);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-rule-2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* Clean Hairline Utilities */
+.hairline-border {
+  border: var(--rule-hair) solid var(--color-rule);
+}
+
+.hairline-b {
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.hairline-t {
+  border-top: var(--rule-hair) solid var(--color-rule);
+}
